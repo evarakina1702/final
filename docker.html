@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<h2>Что такое Docker?</h2>
+
+<strong>Docker</strong> — это платформа, которая позволяет упаковать в контейнер приложение со всем окружением и зависимостями, а затем доставить и запустить его в целевой системе.
+
+Приложение, упакованное в контейнер, изолируется от операционной системы и других приложений. Поэтому разработчики могут не задумываться, в каком окружении будет работать их приложение, а инженеры по эксплуатации — единообразно запускать приложения и меньше заботиться о системных зависимостях.
+<br>
+<br>
+<strong>Docker</strong> разработали в 2008 году. Изначально это был внутренний проект компании dotCloud, которую впоследствии переименовали в Docker Inc. В 2013 году dotCloud открыла исходный код Docker для сообщества.</p><br>
+<br>
+<h2>Устройство и&nbsp;принцип работы Docker</h2>
+<br>
+Виртуализация в&nbsp;Docker реализуется на&nbsp;уровне&nbsp;ОС. Виртуальная среда запускается прямо из&nbsp;ядра основной операционной системы и&nbsp;использует её&nbsp;ресурсы.</p>
+<p class="stk-theme_26309__mb_05 stk-reset" data-ce-tag="paragraph">В&nbsp;поставку Docker входят следующие компоненты:</p>
+<ul>
+   <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker host</strong>&nbsp;— это операционная система, на&nbsp;которую устанавливают Docker и&nbsp;на&nbsp;которой он&nbsp;работает.</li>
+   <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker daemon</strong>&nbsp;— служба, которая управляет Docker-объектами: сетями, хранилищами, образами и&nbsp;контейнерами.</li>
+    <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker client</strong>&nbsp;— консольный клиент, при помощи которого пользователи взаимодействуют с&nbsp;Docker daemon и&nbsp;отправляют ему команды, создают контейнеры и&nbsp;управляют&nbsp;ими.</li>
+    <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker image</strong>&nbsp;— это неизменяемый образ, из&nbsp;которого разворачивается контейнер.</li>
+    <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker container</strong>&nbsp;— развёрнутое и&nbsp;запущенное приложение.</li>
+    <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker Registry</strong>&nbsp;— репозиторий, в&nbsp;котором хранятся образы.</li>
+    <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Dockerfile</strong>&nbsp;— файл-инструкция для сборки образа.</li>
+    <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker Compose</strong>&nbsp;— инструмент для управления несколькими контейнерами. Он&nbsp;позволяет создавать контейнеры и&nbsp;задавать их&nbsp;конфигурацию.</li>
+    <br>
+    <li class="stk-reset stk-list-item" data-ce-tag="list-item"><strong class="stk-reset">Docker Desktop </strong>—&nbsp;GUI-клиент, который распространяется по&nbsp;<a href="https://skillbox.ru/media/code/gayd-po-svobodnym-litsenziyam-ot-gnu-chto-eto-takoe-i-kakimi-oni-byvayut/?utm_source=media&amp;utm_medium=link&amp;utm_campaign=all_all_media_links_links_articles_all_all_skillbox" target="_blank" class="stk-reset">GPL</a>. Бесплатная версия работает на&nbsp;Windows, macOS, а&nbsp;с&nbsp;недавних пор и&nbsp;на&nbsp;Linux. Это очень удобный клиент, который отображает все сущности Docker и&nbsp;позволяет запустить однонодовый Kubernetes для компьютера.</li></ul>
+    <br>
+    <h2>Сущности Docker</h2>
+    <p class="stk-reset" data-ce-tag="paragraph">Docker работает с&nbsp;несколькими сущностями.</p>
+    <ul>
+    <li class="stk-reset" data-ce-tag="paragraph"><strong class="stk-reset">Docker image (образ).</strong> Это шаблон, по&nbsp;которому создают контейнеры. Его часто сравнивают со&nbsp;слоёным пирогом: мы&nbsp;накладываем слой файловой системы поверх слоя базового образа и&nbsp;получаем неизменяемый образ. В&nbsp;него можно установить приложение, конфигурации и&nbsp;зависимости. Другие образы могут наследоваться, поэтому если положить сверху слой файлов и&nbsp;закоммитить, то&nbsp;мы&nbsp;получим ещё один неизменяемый образ.</li>
+    <br>
+    <li class="stk-reset" data-ce-tag="paragraph"><strong class="stk-reset">Dockerfile.</strong> Если Docker image&nbsp;— это пирог, то&nbsp;Dockerfile&nbsp;— рецепт его приготовления. В&nbsp;этом файле описаны основные инструкции для сборки образа: какой базовый образ взять, откуда и&nbsp;куда положить файлы и&nbsp;так далее.</li>
+    <br>
+    <li class="stk-reset" data-ce-tag="paragraph"><strong class="stk-reset">Контейнер</strong>&nbsp;— это runtime-сущность на&nbsp;основе образа, приложение, которое мы&nbsp;развернули с&nbsp;помощью Docker. Можно провести такую аналогию: образ&nbsp;— это инсталлятор программы, а&nbsp;контейнер&nbsp;— уже запущенная программа.</li>
+    <br>
+    <li class="stk-reset" data-ce-tag="paragraph">При развёртывании контейнера поверх файловой системы создаётся ещё один изменяемый слой. Приложение внутри контейнера может записывать туда данные или редактировать&nbsp;их. После удаления контейнера данные стираются, но&nbsp;их&nbsp;можно сохранить с&nbsp;помощью <a href="https://docs.docker.com/storage/volumes/" target="_blank" class="stk-reset">volumes</a>.</li>
+    <br>
+    <li class="stk-reset" data-ce-tag="paragraph"><strong class="stk-reset">Docker Registry.</strong> Это репозиторий, в&nbsp;котором хранятся Docker-образы. Он&nbsp;может быть как локальным, так и&nbsp;публичным. Репозитории создают на&nbsp;платформах вроде Docker Hub и&nbsp;GitLab и&nbsp;размещают в&nbsp;них образы с&nbsp;описанием, разными версиями и&nbsp;тегами.</li></ul>
+    <br>
+    <h2>Как Docker помогает на практике?</h2>
+    <br>
+    <ol>
+       1. <strong class="stk-reset">Разработка приложений с&nbsp;зависимостями</strong>
+       <p class="stk-reset" data-ce-tag="paragraph">Обычно, чтобы установить какую-то библиотеку или базу данных, разработчику нужно прочитать инструкцию на&nbsp;сайте. Он&nbsp;её&nbsp;скачивает, устанавливает, настраивает и&nbsp;запускает. А&nbsp;когда нужно перейти на&nbsp;другую зависимость&nbsp;— удаляет. И&nbsp;так приходится возиться с&nbsp;каждой зависимостью.</p>
+       <p class="stk-reset" data-ce-tag="paragraph">Docker предоставляет альтернативный путь. Вендоры библиотек, фреймворков и&nbsp;баз данных практически каждый день публикуют на&nbsp;Docker Hub свой софт в&nbsp;виде Docker image. Образ можно скачать и&nbsp;развернуть через Docker, поработать с&nbsp;ним, запушить, а&nbsp;потом остановить или удалить, и&nbsp;в&nbsp;операционной системе не&nbsp;останется никаких следов.</p>
+       <p class="stk-reset" data-ce-tag="paragraph">Единый интерфейс управления исключает необходимость индивидуальных команд. Достаточно выучить команды Docker: как скачивать образы, запускать контейнеры, пробрасывать, останавливать и&nbsp;удалять порты. С&nbsp;Docker можно запустить сколько угодно одинаковых баз внутри одной операционки. Благодаря изоляции, если что-то пойдёт не&nbsp;так, ошибки не&nbsp;затронут операционную систему и&nbsp;ничего не&nbsp;сломают.</p>
+       2. <strong class="stk-reset">Автоматизация тестирования </strong>
+       <p class="stk-reset" data-ce-tag="paragraph">Чтобы запустить автотесты, требуются определённые зависимости, например базы данных, брокеры сообщений и&nbsp;тому подобное. Их&nbsp;необходимо предварительно установить и&nbsp;сконфигурировать на&nbsp;сервере сборки. В&nbsp;этом месте иногда возникают проблемы: если при настройке упустить какую-то деталь, то&nbsp;можно испортить данные или что-то поломать. Гораздо безопаснее автоматически развернуть зависимости в&nbsp;виде контейнера прямо на&nbsp;сервере. Это позволяет быстро прогнать тесты, а&nbsp;после&nbsp;— бесследно удалить контейнеры.</p>
+       <p class="stk-reset" data-ce-tag="paragraph">Даже если тесты «сломают» какие-то данные, они удалятся вместе с&nbsp;контейнером. Кроме того, сам сервер с&nbsp;Docker, на&nbsp;котором запускаются автотесты, станет универсальным. Ведь благодаря контейнеризации на&nbsp;нём можно будет запускать что угодно. А&nbsp;значит, вы&nbsp;сэкономите на&nbsp;железе и&nbsp;настройке системы.</p>
+       3.<strong class="stk-reset">Публикация приложений</strong>
+       <p class="stk-reset" data-ce-tag="paragraph">После тестирования проект упаковывают в&nbsp;образ и&nbsp;публикуют, передают клиентам или инфраструктурным инженерам.</p>
+       <p class="stk-reset" data-ce-tag="paragraph">Docker упрощает дальнейшее развёртывание приложения. SRE не&nbsp;нужно думать, какие зависимости установить, ведь всё уже упаковано в&nbsp;образ. Для них это чёрный ящик, который они обновляют единообразно и&nbsp;автоматически через одни и&nbsp;те&nbsp;же команды.</p>
+       <p class="stk-reset" data-ce-tag="paragraph">Среда для деплоя тоже становится универсальной, потому что всегда имеет дело только с&nbsp;контейнерами. Сегодня в&nbsp;ней развернули один контейнер, завтра&nbsp;— другой. При этом в&nbsp;контейнерах могут быть упакованы совершенно не&nbsp;похожие друг на&nbsp;друга приложения.</p></ol>
+    
